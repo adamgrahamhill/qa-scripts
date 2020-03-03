@@ -1,0 +1,7 @@
+#!/bin/bash
+
+
+prNum="$1"
+shift
+commitMsg="$*"
+git fetch upstream pull/${prNum}/head && git merge --squash FETCH_HEAD && git commit -m "$commitMsg"
