@@ -1,7 +1,11 @@
 #!/bin/bash
 
-# Fetches all new changes from remote repo and applies to QA's relevant branches
+# Fetches changes from remote repo and applies to QA's relevant branches
 #Assumes remote branch is named upstream
+
+if [[ ! -d ./.git ]]; then
+  echo "error: This is not a git repository" >&2; exit 1
+fi
 
 REMOTE="upstream"
 CURRENT_DIR=${PWD##*/}
