@@ -6,8 +6,6 @@
 REMOTE="upstream"
 CURRENT_DIR=${PWD##*/}
 
-git fetch --all
-
 if [[ $CURRENT_DIR = "SharpSpringNG" ]]; then
   declare -a branches=("master" "staging" "staging-new")
 else
@@ -17,5 +15,6 @@ fi
 for branch in "${branches[@]}"
 do
   git checkout ${branch}
+  git fetch ${REMOTE} ${branch}
   git reset --hard ${REMOTE}/${branch}
 done
