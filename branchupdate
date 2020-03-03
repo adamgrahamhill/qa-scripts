@@ -8,7 +8,7 @@ CURRENT_DIR=${PWD##*/}
 
 git fetch --all
 
-if [ $CURRENT_DIR = "SharpSpringNG" ]; then
+if [[ $CURRENT_DIR = "SharpSpringNG" ]]; then
   declare -a branches=("master" "staging" "staging-new")
 else
   declare -a branches=("master" "staging")
