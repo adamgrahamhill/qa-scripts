@@ -10,4 +10,4 @@ PR_NUM="$1"
 shift
 COMMIT_MESSAGE="$*"
 
-git fetch ${REMOTE} pull/${PR_NUM}/head && git merge --squash FETCH_HEAD && git commit -m \""$COMMIT_MESSAGE"\"
+git fetch ${REMOTE} pull/${PR_NUM}/head && git merge --squash FETCH_HEAD && git commit -m "$COMMIT_MESSAGE"
