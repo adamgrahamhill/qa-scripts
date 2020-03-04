@@ -2,12 +2,12 @@
 
 # Fetch, merge, and commit PR to local branch
 # Assumes remote is named upstream
-# addpr [pull request number] "[commit message]"
-# example: addpr 9001 "SRSP-2020 | Does the do"
+# addpr [pull request number] [commit message]
+# example: addpr 9001 SRSP-2020 | Fixes that one thing maybe
 
 REMOTE="upstream"
-PRNUM="$1"
+PR_NUM="$1"
 shift
 COMMIT_MESSAGE="$*"
 
-git fetch ${REMOTE} pull/${PRNUM}/head && git merge --squash FETCH_HEAD && git commit -m "$COMMIT_MESSAGE"
+git fetch ${REMOTE} pull/${PR_NUM}/head && git merge --squash FETCH_HEAD && git commit -m \""$COMMIT_MESSAGE"\"
