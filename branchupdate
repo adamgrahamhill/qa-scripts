@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #Fetches changes from remote repo and applies to QA's relevant branches
 #Assumes remote branch is named upstream
 
@@ -9,8 +9,8 @@ if [[ ! -d ./.git ]]; then
   echo "error: Current directory is not a git repository" >&2; exit 1
 fi
 
-if [[ $CURRENT_DIR = "SharpSpringNG" ]]; then
-  declare -a branches=("master" "staging" "staging-new")
+if [[ ${CURRENT_DIR,,} = "sharpspringng" ]]; then
+  declare -a branches=("master" "staging-new" "staging")
 else
   declare -a branches=("master" "staging")
 fi
