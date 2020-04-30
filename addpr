@@ -1,12 +1,10 @@
 #!/bin/bash
-
 # Fetch, merge, and commit PR to local branch
 # Assumes remote is named upstream
-# addpr [pull request number] [commit message]
-# example: addpr 9001 SRSP-2020 | Fixes that one thing maybe
+# run with  `addpr [pull request number] [commit message]`
 
-REMOTE="upstream"
-PR_NUM="$1"
+readonly REMOTE="upstream"
+readonly PR_NUM="$1"
 shift
 COMMIT_MESSAGE="$*"
 
