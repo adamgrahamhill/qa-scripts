@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# ./generateLeads [number of desired leads]
+#Produces a CSV named generatedLeads.csv in your current directory
+
+numLeads="$1"
+
+echo 'emailAddress,isUnsubscribed' > generatedLeads.csv
+eval "echo -e 'lead-'{1..$numLeads}'@sink.sendgrid.net,0\n'" | tr  -d ' ' >> generatedLeads.csv
